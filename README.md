@@ -62,6 +62,31 @@ npm run lint
 
 ```
 设计稿以375*667为基准
+
+//登录 api
+http
+url:接口地址 String
+method: 请求方法 String
+params:请求参数 Object
+
+export const loginAcount = params => {
+  return http({
+    url: '/api/token',
+    method: 'post',
+    params
+  })
+}
+
+
+//上传文件
+upload 参数
+url,params,除了文件之外的请求参数（用于加签）
+
+export const uploadFile = params => {
+  return upload('/api/upload/files', params, {
+    "prefix": "cert-check-log"
+  })
+}
 ```
 
 ## 版本说明
