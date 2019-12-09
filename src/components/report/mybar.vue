@@ -18,7 +18,7 @@ export default {
   methods: {
     getChart() {
       console.log(this.props);
-      
+
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(document.getElementById(this.domName));
       let newObj = {
@@ -73,8 +73,8 @@ export default {
         yAxis: [
           {
             type: "category",
-            data: this.props.map(item=>{
-              return item.name
+            data: this.props.map(item => {
+              return item.name;
             }),
             axisLabel: {
               interval: 0
@@ -112,8 +112,8 @@ export default {
                 show: true
               }
             },
-            data: this.props.map(item=>{
-              return item.value
+            data: this.props.map(item => {
+              return item.value;
             })
           }
         ]
@@ -130,15 +130,14 @@ export default {
   },
   mounted() {
     // 加载报表
-    this.getChart()
+    this.getChart();
   },
   watch: {
     // 监听数据变化
     props() {
-      this.getChart()
+      this.getChart();
     }
-  },
+  }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

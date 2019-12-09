@@ -20,7 +20,11 @@
                 时间：
                 <span class="timeName">{{ dateContent[dateLine] }}</span>
               </span>
-              <img class="downicon" src="~@/assets/img/report/clickdown.png" alt />
+              <img
+                class="downicon"
+                src="~@/assets/img/report/clickdown.png"
+                alt
+              />
             </div>
             <div class="date" v-show="showTime" ref="myDate">
               <ul v-show="isKey">
@@ -107,7 +111,7 @@ export default {
     })
   },
   methods: {
-    ...mapMutations('report',["setdateLine"]),
+    ...mapMutations("report", ["setdateLine"]),
 
     // 获取top榜数据
     async getTopList(areaMsg, startDate, endDate) {

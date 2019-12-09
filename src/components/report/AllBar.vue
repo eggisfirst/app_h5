@@ -22,7 +22,7 @@ export default {
     //获取附件的值
     getData() {
       // console.log(this.props);
-      if(!this.props.series) return
+      if (!this.props.series) return;
       this.data = this.props;
       let { series, yAxisData } = this.data;
       this.serArr = series;
@@ -67,8 +67,8 @@ export default {
         },
         xAxis: [
           {
-            data: this.serArr.map(item=>{
-              return item.name
+            data: this.serArr.map(item => {
+              return item.name;
             }),
             type: "category",
             axisTick: {
@@ -118,8 +118,8 @@ export default {
           {
             type: "bar",
             barWidth: "40%",
-            data: this.serArr.map(item=>{
-              return item.data[0]
+            data: this.serArr.map(item => {
+              return item.data[0];
             }),
             itemStyle: {
               normal: {
@@ -142,7 +142,7 @@ export default {
       };
       //   opt.series[0].data = this.serArr;
       this.option = opt;
-      myChart1.clear()
+      myChart1.clear();
       //使用刚指定的配置项和数据显示图表。
       this.$nextTick(() => {
         myChart1.setOption(this.option, true);
@@ -166,5 +166,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

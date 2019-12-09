@@ -2,8 +2,7 @@
   <div class="reportForms">
     <!-- <WorkHeader :title="'报表'" v-if="status" /> -->
     <banner :title="'店长报表'" class="header" v-if="!status"></banner>
-    <div class="search">
-    </div>
+    <div class="search"></div>
     <div class="topList">
       <div class="peopleTop" @click="topSales('person')"></div>
       <div class="shopTop" @click="topSales('product')"></div>
@@ -11,11 +10,19 @@
     <div class="forms">
       <div class="title">报表模块</div>
       <ul>
-        <li v-for="(item,index) in forms" :key="index" @click="linkTo(index)" :class="`${index}`">
-          <div class="icon" :style="{background:item.color}">
-            <div class="icon-forms" :style="{'background-position':`${item.iconPosition}`}"></div>
+        <li
+          v-for="(item, index) in forms"
+          :key="index"
+          @click="linkTo(index)"
+          :class="`${index}`"
+        >
+          <div class="icon" :style="{ background: item.color }">
+            <div
+              class="icon-forms"
+              :style="{ 'background-position': `${item.iconPosition}` }"
+            ></div>
           </div>
-          <p>{{item.text}}</p>
+          <p>{{ item.text }}</p>
         </li>
       </ul>
     </div>
@@ -133,7 +140,7 @@ export default {
 
 <style lang="scss" scoped>
 .reportForms {
-  min-height: 100vh;
+  // min-height: 100vh;
   // font-family: PINGPANG;
   background: #f8f8f8;
   position: relative;

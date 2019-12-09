@@ -1,24 +1,27 @@
 <template>
   <div id="area">
-    <div class="topArea"
-         @click="showArea">
-      <div class="areaName"
-           v-if="areaList[areaLine]">{{areaList[areaLine].shopName?areaList[areaLine].shopName:areaList[areaLine]}}</div>
+    <div class="topArea" @click="showArea">
+      <div class="areaName" v-if="areaList[areaLine]">
+        {{
+          areaList[areaLine].shopName
+            ? areaList[areaLine].shopName
+            : areaList[areaLine]
+        }}
+      </div>
       <div class="icon">
-        <img class="downicon"
-             src="~@/assets/img/report/clickdown.png"
-             alt />
+        <img class="downicon" src="~@/assets/img/report/clickdown.png" alt />
       </div>
     </div>
-    <div class="areaList"
-         v-show="isShow">
-      <ul :class="isScroll?'scroll':''">
-        <li :class="['myli',index==areaLine?'active':''] "
-            v-for="(item,index) in areaList"
-            :key="index"
-            @click="changeArea(item,index)">
+    <div class="areaList" v-show="isShow">
+      <ul :class="isScroll ? 'scroll' : ''">
+        <li
+          :class="['myli', index == areaLine ? 'active' : '']"
+          v-for="(item, index) in areaList"
+          :key="index"
+          @click="changeArea(item, index)"
+        >
           <span>
-            <p v-show="isKey">{{item.shopName?item.shopName:item}}</p>
+            <p v-show="isKey">{{ item.shopName ? item.shopName : item }}</p>
           </span>
         </li>
       </ul>
@@ -63,7 +66,7 @@ export default {
     })
   },
   methods: {
-    ...mapMutations('report',["setAreaLine", "setAreaName"]),
+    ...mapMutations("report", ["setAreaLine", "setAreaName"]),
     // 展开区域选项
     showArea() {
       this.isShow = !this.isShow;
@@ -119,7 +122,7 @@ export default {
   mounted() {}
 };
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 #area {
   .topArea {
     width: 150px;

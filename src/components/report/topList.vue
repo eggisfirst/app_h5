@@ -10,11 +10,13 @@
             <!-- <div class="picture">
               <img src alt />
             </div> -->
-            <div class="name">{{toplist[0].name.split('/')[0]}}</div>
+            <div class="name">{{ toplist[0].name.split("/")[0] }}</div>
           </div>
-          <div class="price">{{(toplist[0].totalMoney.split('.')[0]/10000).toFixed(2)}}</div>
+          <div class="price">
+            {{ (toplist[0].totalMoney.split(".")[0] / 10000).toFixed(2) }}
+          </div>
         </li>
-        <li  v-if="list.length >= 2">
+        <li v-if="list.length >= 2">
           <div class="left">
             <div class="num">
               <img src="~@/assets/img/report/toptwo.png" class="rank" alt />
@@ -22,11 +24,13 @@
             <!-- <div class="picture">
               <img src alt />
             </div> -->
-            <div class="name">{{toplist[1].name.split('/')[0]}}</div>
+            <div class="name">{{ toplist[1].name.split("/")[0] }}</div>
           </div>
-          <div class="price">{{(toplist[1].totalMoney.split('.')[0]/10000).toFixed(2)}}</div>
+          <div class="price">
+            {{ (toplist[1].totalMoney.split(".")[0] / 10000).toFixed(2) }}
+          </div>
         </li>
-        <li  v-if="list.length >= 3">
+        <li v-if="list.length >= 3">
           <div class="left">
             <div class="num">
               <img src="~@/assets/img/report/topthree.png" class="rank" alt />
@@ -34,22 +38,25 @@
             <!-- <div class="picture">
               <img src alt />
             </div> -->
-            <div class="name">{{toplist[2].name.split('/')[0]}}</div>
+            <div class="name">{{ toplist[2].name.split("/")[0] }}</div>
           </div>
-          <div class="price">{{(toplist[2].totalMoney.split('.')[0]/10000).toFixed(2)}}</div>
+          <div class="price">
+            {{ (toplist[2].totalMoney.split(".")[0] / 10000).toFixed(2) }}
+          </div>
         </li>
-        <li  v-for="(item,index) in toplist" :key="index" >
+        <li v-for="(item, index) in toplist" :key="index">
           <!-- v-if="index>=3" -->
           <div class="left">
-            <div class="num">{{index+1}}</div>
+            <div class="num">{{ index + 1 }}</div>
             <!-- <div class="picture">
               <img src alt />
             </div> -->
-            <div class="name">{{item.name.split('/')[0]}}</div>
+            <div class="name">{{ item.name.split("/")[0] }}</div>
           </div>
-          <div class="price">{{(item.totalMoney.split('.')[0]/10000).toFixed(2)}}</div>
+          <div class="price">
+            {{ (item.totalMoney.split(".")[0] / 10000).toFixed(2) }}
+          </div>
         </li>
-        
       </ul>
     </div>
   </div>
@@ -57,22 +64,21 @@
 
 <script>
 export default {
-    props:['list'],
-    data() {
-        return {
-            toplist:[]
-        }
-    },
-    watch: {
-        list() {
-            if(this.list.length == 0) {
-                this.toplist = []
-            }
-            this.toplist = this.list
-            // console.log(this.toplist);
-            
-        }
-    },
+  props: ["list"],
+  data() {
+    return {
+      toplist: []
+    };
+  },
+  watch: {
+    list() {
+      if (this.list.length == 0) {
+        this.toplist = [];
+      }
+      this.toplist = this.list;
+      // console.log(this.toplist);
+    }
+  }
 };
 </script>
 
@@ -97,7 +103,7 @@ export default {
           }
         }
         .name {
-            margin-left: 10px;
+          margin-left: 10px;
         }
         .picture {
           width: 40px;

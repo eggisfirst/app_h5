@@ -1,11 +1,11 @@
- <!-- <keep-alive> -->
+<!-- <keep-alive> -->
 <template>
   <div class="banner">
     <div :class="`${fix}`"></div>
     <div class="icon-back" @click="cilck">
       <div class="icon iconfont icon-fanhui1"></div>
     </div>
-    <span class="my_title" :class="left? 'myLeftStyle':''">{{title}}</span>
+    <span class="my_title" :class="left ? 'myLeftStyle' : ''">{{ title }}</span>
     <slot></slot>
     <!-- <more-details class="details"  v-show='MoreBtn'/> -->
   </div>
@@ -13,8 +13,8 @@
 <!-- </keep-alive> -->
 
 <script>
-import Vue from "vue";
-import VueRouter from "vue-router";
+// import Vue from "vue";
+// import VueRouter from "vue-router";
 // import MoreDetails from './Gallery/productDetails/moreDetail'
 export default {
   name: "routerLink",
@@ -33,7 +33,7 @@ export default {
     cilck: function() {
       this.$router.back(-1);
     },
-    isIPhoneX: function(fn) {
+    isIPhoneX: function() {
       var u = navigator.userAgent;
       var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
       if (isIOS) {
@@ -43,7 +43,6 @@ export default {
         ) {
           this.fix = "fix";
           this.top = "6";
-        } else {
         }
       }
     }

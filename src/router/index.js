@@ -13,6 +13,14 @@ const routes = [
     }
   },
   {
+    path: "/train",
+    name: "train",
+    component: () => import("@/views/train/Index"),
+    meta: {
+      title: "培训报名首页"
+    }
+  },
+  {
     path: "/top",
     name: "top",
     component: () => import("@/views/report/Top"),

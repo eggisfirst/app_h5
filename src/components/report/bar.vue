@@ -1,6 +1,11 @@
 <!-- <keep-alive> -->
 <template>
-  <div :style="{height: `${height}vw`,width:'100vw'}" class="main" :id="domName" ref="main"></div>
+  <div
+    :style="{ height: `${height}vw`, width: '100vw' }"
+    class="main"
+    :id="domName"
+    ref="main"
+  ></div>
 </template>
 <!-- </keep-alive> -->
 
@@ -47,25 +52,21 @@ export default {
     // console.log('组件加载', this.data)
     // let TopChart = document.getElementById(this.domName);
     // echarts.init(TopChart).setOption(this.option());
-    
-    
   },
-  updated() {
-    
-  },
+  updated() {},
   beforeUpdate() {
     // console.log('组件更新前', this.data)
   },
   watch: {
     data(val) {
       console.log(this.data);
-      
+
       if (this.key) {
         this.barData = val;
         let TopChart = document.getElementById(this.domName);
         echarts.init(TopChart).setOption(this.option());
         this.initDom1 = echarts.init(TopChart);
-        this.initDom1.resize()
+        this.initDom1.resize();
       }
     }
   },
@@ -146,7 +147,7 @@ export default {
           left: "3%",
           top: "80",
           bottom: "3%",
-          height: '82%',
+          height: "82%",
           containLabel: true
         },
         color: [
@@ -192,8 +193,8 @@ export default {
         return {
           name: item.name,
           type: "bar",
-          barWidth:'15',
-          barGap:'15%',
+          barWidth: "15",
+          barGap: "15%",
           // barCategoryGap:'10%',
           label: {
             normal: {

@@ -2,7 +2,6 @@ import { getSign } from "@/utils";
 import axios from "axios";
 import qs from "qs";
 // import { Indicator, Toast } from "mint-ui";
-
 import router from "@/router";
 
 let baseURL = "https://mobiletest.derucci.net/cd-sys-web/";
@@ -23,15 +22,9 @@ instance.interceptors.request.use(
     if (config.headers["Content-Type"] == "application/json") {
       config.data = JSON.stringify(config.data);
     }
-    // Indicator.open({
-    //   text: "数据请求中...",
-    //   spinnerType: "fading-circle"
-    // });
     return config;
   },
   error => {
-    // Indicator.close();
-    // Toast("数据请求失败");
     return Promise.resolve(error);
   }
 );
@@ -39,11 +32,9 @@ instance.interceptors.request.use(
 // http response 拦截器
 instance.interceptors.response.use(
   response => {
-    // Indicator.close();
     return response.data;
   },
   error => {
-    // Indicator.close();
     if (error && error.response && error.response.status == 510) {
       router.push({
         path: "/Login"

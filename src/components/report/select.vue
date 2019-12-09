@@ -4,48 +4,58 @@
     <div id="select">
       <div class="left">
         <div class="area" @touchend="changeArea(1)">
-          <span class="title">{{areaContent?areaContent:areaName}}</span>
+          <span class="title">{{ areaContent ? areaContent : areaName }}</span>
           <img
             src="../../assets/imgs/back.png"
             alt
             class="back"
-            :style="{'transform': `rotate(${areaRotate}deg)`}"
+            :style="{ transform: `rotate(${areaRotate}deg)` }"
           />
         </div>
         <div class="area" @touchend="changeArea(2)" v-if="isBrand">
-          <span class="title">{{brandContent?brandContent:brand.split('-')[1]}}</span>
+          <span class="title">{{
+            brandContent ? brandContent : brand.split("-")[1]
+          }}</span>
           <img
             src="../../assets/imgs/back.png"
             alt
             class="back"
-            :style="{'transform': `rotate(${brandRotate}deg)`}"
+            :style="{ transform: `rotate(${brandRotate}deg)` }"
           />
         </div>
       </div>
       <div class="right" @touchend="changeArea(3)">
         <div class="area">
-          <span class="title">{{dateContent?dateContent:'今日'}}</span>
+          <span class="title">{{ dateContent ? dateContent : "今日" }}</span>
           <img
             src="../../assets/imgs/back.png"
             alt
             class="back"
-            :style="{'transform': `rotate(${dateRotate}deg)`}"
+            :style="{ transform: `rotate(${dateRotate}deg)` }"
           />
         </div>
       </div>
     </div>
-    <div class="selecList" v-show="listShow" :style="{top:`${top}`}">
-      <ul :class="[ulScroll?'active':'']" :style="{display:`${ulFlex}`}">
+    <div class="selecList" v-show="listShow" :style="{ top: `${top}` }">
+      <ul :class="[ulScroll ? 'active' : '']" :style="{ display: `${ulFlex}` }">
         <li
-          v-for="(value,index) in selList"
+          v-for="(value, index) in selList"
           :key="index"
-          @click="getChange(value,index)"
-          v-if="value.name == ''?false:true"
+          @click="getChange(value, index)"
+          v-if="value.name == '' ? false : true"
         >
           <span
-            :class="[{'active':index==listIndex}]"
-            :style="{width:`${liWidth}`,border:`${liBorder}`,flexDirection:`${liFlex}`,textAlign:`${liTextAlign}`}"
-          >{{value.name.includes('-')?value.name.split('-')[1]:value.name}}</span>
+            :class="[{ active: index == listIndex }]"
+            :style="{
+              width: `${liWidth}`,
+              border: `${liBorder}`,
+              flexDirection: `${liFlex}`,
+              textAlign: `${liTextAlign}`
+            }"
+            >{{
+              value.name.includes("-") ? value.name.split("-")[1] : value.name
+            }}</span
+          >
         </li>
       </ul>
       <div class="customize" v-show="timeShow">
@@ -55,9 +65,13 @@
         </div>
         <div class="cusTime">
           <div class="left">
-            <div class="startTime" @click="openDatePick(0)">{{this.startTimeSelect | timeMat}}</div>
+            <div class="startTime" @click="openDatePick(0)">
+              {{ this.startTimeSelect | timeMat }}
+            </div>
             <span style="font-size:14px;padding:0 7px;color:#363636;">-</span>
-            <div class="endTime" @click="openDatePick(1)">{{this.endTimeSelect | timeMat}}</div>
+            <div class="endTime" @click="openDatePick(1)">
+              {{ this.endTimeSelect | timeMat }}
+            </div>
           </div>
           <div class="right">
             <button @click="getCusTime">确定</button>
@@ -513,7 +527,7 @@ export default {
     },
     // 获取所用品牌
     async getBrand() {
-      var url = baseUrl;
+      // var url = baseUrl;
       // var url = 'https://qiang.derucci.com'
       // let res = await axios.get( url+"/api/good/brand/list");
       // console.log(res);

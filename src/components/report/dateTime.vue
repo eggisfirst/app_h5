@@ -65,20 +65,20 @@ export default {
     Bus.$on("myDate", val => {
       if (val) {
         this.timeVal = "end";
-        if(this.endTimeSelect) {
-        this.pickerValue = this.endTimeSelect
-        console.log(this.pickerValue);
-        }else {
-          this.pickerValue = new Date()
+        if (this.endTimeSelect) {
+          this.pickerValue = this.endTimeSelect;
+          console.log(this.pickerValue);
+        } else {
+          this.pickerValue = new Date();
         }
       } else {
         this.timeVal = "start";
-       if(this.startTimeSelect){
-          this.pickerValue = this.startTimeSelect
+        if (this.startTimeSelect) {
+          this.pickerValue = this.startTimeSelect;
           console.log(this.pickerValue);
-       }else {
-         this.pickerValue = new Date()
-       }
+        } else {
+          this.pickerValue = new Date();
+        }
       }
       console.log(this.timeVal);
       this.index = val + new Date();
@@ -91,5 +91,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
