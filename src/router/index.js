@@ -21,6 +21,22 @@ const routes = [
     }
   },
   {
+    path: "/printCode",
+    name: "printCode",
+    component: () => import("@/views/train/printCode"),
+    meta: {
+      title: "报名码"
+    }
+  },
+  {
+    path: "/result",
+    name: "result",
+    component: () => import("@/views/train/result"),
+    meta: {
+      title: "发放物资"
+    }
+  },
+  {
     path: "/top",
     name: "top",
     component: () => import("@/views/report/Top"),
