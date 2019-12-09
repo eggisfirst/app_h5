@@ -1,31 +1,35 @@
 # derucci-app
 
 ## Project setup
+
 ```
 npm install
 ```
 
 ### 运行项目 Compiles and hot-reloads for development
+
 ```
 npm run serve
 npm run dev
 ```
 
 ### 构建项目 Compiles and minifies for production
+
 ```
 npm run build
 ```
 
-### eslint整理代码格式 Lints and fixes files
+### eslint 整理代码格式 Lints and fixes files
+
 ```
 最好git commit前运行一次，这样确保代码格式都是统一的
 npm run lint
 ```
 
-
 ## 目录结构
-`
-├─dist  
+
+```
+├─dist
 │  ├─css
 │  ├─img
 │  └─js
@@ -52,11 +56,12 @@ npm run lint
     └─views               //页面
         ├─report
         └─train
-`
+```
 
 ## 注意
-`
+
+```
 设计稿以375*667为基准
-`
+```
 
 ## 版本说明
