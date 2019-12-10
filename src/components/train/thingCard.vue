@@ -9,13 +9,42 @@
       <span class="text">住宿</span>
       <input type="text" placeholder="请输入酒店和房间号信息" class="inpBox" />
     </div>
+    <div class="thing_box">
+      <span class="text">物料</span>
+      <echeckbox :dataSource="dataSource" @handle="handle" class="checkbox"></echeckbox>
+    </div>
   </div>
 </template>
 
 <script>
+import echeckbox from "./e-checkbox";
 export default {
+  components: { echeckbox },
   data() {
-    return {};
+    return {
+      lovingVue: "",
+      chooseData: [],
+      checked: false,
+      dataSource: [
+        {
+          title: '书',
+        },
+        {
+          title: '毛巾',
+        },
+        {
+          title: '衣服',
+        },
+      ]
+    };
+  },
+  methods: {
+    checkbox(e) {
+      console.log("eee", e);
+    },
+    handle() {
+
+    }
   }
 };
 </script>
@@ -47,6 +76,14 @@ export default {
       box-sizing: border-box;
     }
   }
+  .thing_box {
+    margin-top: 23px;
+    display: flex;
+    .checkbox {
+      margin-left: 24px;
+    }
+  }
+
   .text {
     color: #363636;
     font-size: 14px;
