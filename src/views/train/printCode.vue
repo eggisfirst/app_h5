@@ -24,7 +24,7 @@ export default {
   }
 };
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .printCode {
   box-sizing: border-box;
   padding-top: 131px;
@@ -79,7 +79,7 @@ export default {
     width: 375px;
     height: 174px;
     position: fixed;
-    bottom: 0
+    bottom: 0;
   }
 }
 </style>

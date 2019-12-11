@@ -2,7 +2,7 @@
 <template>
   <div class="login_container">
     <div class="header">
-      <div :class="loginStatus">{{loginText}}</div>
+      <div :class="loginStatus">{{ loginText }}</div>
       <div class="logo">derucci慕思</div>
     </div>
     <div class="content">
@@ -37,7 +37,7 @@ export default {
   }
 };
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .login_container {
   width: 343px;
   // height: 260px;

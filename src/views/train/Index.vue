@@ -1,9 +1,25 @@
 <template>
   <div class="container">
-    <loginModel class="loginModal" :loginStatus='loginStatus' :loginText="loginText"/>
-    <loginModel class="loginModal" :loginStatus='loginStatus' :loginText="loginText"/>
-    <loginModel class="loginModal" :loginStatus='loginStatus' :loginText="loginText"/>
-    <loginModel class="loginModal" :loginStatus='loginStatus' :loginText="loginText"/>
+    <loginModel
+      class="loginModal"
+      :loginStatus="loginStatus"
+      :loginText="loginText"
+    />
+    <loginModel
+      class="loginModal"
+      :loginStatus="loginStatus"
+      :loginText="loginText"
+    />
+    <loginModel
+      class="loginModal"
+      :loginStatus="loginStatus"
+      :loginText="loginText"
+    />
+    <loginModel
+      class="loginModal"
+      :loginStatus="loginStatus"
+      :loginText="loginText"
+    />
     <div class="toCode" @click="toCode"></div>
   </div>
 </template>
@@ -14,13 +30,13 @@ export default {
   components: { loginModel },
   data() {
     return {
-      loginStatus: 'login',
-      loginText: '报名中'
+      loginStatus: "login",
+      loginText: "报名中"
     };
   },
   methods: {
     toCode() {
-      console.log('click')
+       window.postMessage('scan')
     }
   }
 };
