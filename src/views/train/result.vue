@@ -35,6 +35,7 @@ export default {
   },
   methods: {
     comfirm() {
+      alert("comfirm");
     }
   }
 };
