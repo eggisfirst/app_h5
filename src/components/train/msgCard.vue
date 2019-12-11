@@ -4,23 +4,23 @@
     <img class="img" :src="imgUrl" />
     <div class="right_box">
       <div class="title">
-        <p>{{title}}</p>
-        <p class="number">报名码：{{code}}</p>
+        <p>{{ title }}</p>
+        <p class="number">报名码：{{ code }}</p>
       </div>
-      <p class="cost">报名费用：￥{{pay}}</p>
+      <p class="cost">报名费用：￥{{ pay }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['code', 'title', 'pay', 'imgUrl'],
+  props: ["code", "title", "pay", "imgUrl"],
   data() {
     return {};
   }
 };
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .msgCard {
   box-sizing: border-box;
   padding: 15px 16px;

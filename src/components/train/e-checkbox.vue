@@ -3,9 +3,15 @@
 <template>
   <div class="wt-checkbox">
     <ul>
-      <li v-for="(item, index) in dataSource" :key="index" @click="handle(item, index)">
-        <p :class="{'icon-check acitive': find(item), 'disable': item.disable}"></p>
-        <div class="text">{{item.title}}</div>
+      <li
+        v-for="(item, index) in dataSource"
+        :key="index"
+        @click="handle(item, index)"
+      >
+        <p
+          :class="{ 'icon-check acitive': find(item), disable: item.disable }"
+        ></p>
+        <div class="text">{{ item.title }}</div>
       </li>
     </ul>
   </div>
@@ -70,7 +76,7 @@ export default {
   }
 };
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .text {
   color: #363636;
   font-size: 14px;

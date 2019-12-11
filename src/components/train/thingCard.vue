@@ -11,7 +11,11 @@
     </div>
     <div class="thing_box">
       <span class="text">物料</span>
-      <echeckbox :dataSource="dataSource" @handle="handle" class="checkbox"></echeckbox>
+      <echeckbox
+        :dataSource="dataSource"
+        @handle="handle"
+        class="checkbox"
+      ></echeckbox>
     </div>
   </div>
 </template>
@@ -27,14 +31,14 @@ export default {
       checked: false,
       dataSource: [
         {
-          title: '书',
+          title: "书"
         },
         {
-          title: '毛巾',
+          title: "毛巾"
         },
         {
-          title: '衣服',
-        },
+          title: "衣服"
+        }
       ]
     };
   },
@@ -42,13 +46,11 @@ export default {
     checkbox(e) {
       console.log("eee", e);
     },
-    handle() {
-
-    }
+    handle() {}
   }
 };
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .thingCard {
   background: #fff;
   box-sizing: border-box;
